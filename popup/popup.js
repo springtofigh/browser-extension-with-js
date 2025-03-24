@@ -1,16 +1,34 @@
-console.log("extention")
+const sendMessageBtn = document.getElementById("send_btn");
 
-const btn = document.getElementById("replace_btn");
+function sendMessage() {
+    let HTMLTab = document.getElementById("tabs");
+    tabs.innerHTML = ""
 
-function replace() {
-    // این آیدی بسیار مهمه
+    function showTabs(tabs) {
+        tabs.map(tab => {
+            let liElement = document.createElement("li");
+            liElement.innerText = tab.title;
+            HTMLTab.append(liElement);
 
-    // window.location.href = 'chrome-extension://jpkegnchdpngbnfdakamjlcpndnnpjek/popup/dashboard.html'
+            if (tab.active === true) {
+            liElement.style.backgroundColor = "blue"; 
+            liElement.style.color = "white"; 
+            }
 
-    //جهت جلوگیری از شلوغی کدها و تکرار نکردن chrome-extension://jpkegnchdpngbnfdakamjlcpndnnpjek
+            let spanElement = document.createElement("span");
+            spanElement.innerText = tab.url;
+            liElement.append(spanElement);
+        })
+    }
 
-    // let url_file = chrome.runtime.getURL('popup/dashboard.html') //در مسیردهی خیلی مهمه که حواسمون به فولدر باشه
-    // chrome.tabs.create({url:url_file})
+    const port = chrome.runtime.connect({ name: "popup" })
+
+    port.onMessage.addListener(msg => {
+        console.log("Recieve Message from backgroundJs:", msg.response)
+        showTabs(msg.response)
+    })
+
+    port.postMessage({response: "Hello from popup"})
 }
 
-btn.addEventListener("click" , replace)
+sendMessageBtn.addEventListener("click", sendMessage)

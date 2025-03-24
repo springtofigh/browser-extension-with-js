@@ -1,11 +1,29 @@
-console.log("kaftar")
+let AllTabs
+
+chrome.tabs.query({}, function (tabs) {
+    AllTabs = tabs
+})
+
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-    //درخواست ارسال شده از فایل پاپ‌آپ
-    // console.log(request.message)
+    if (request.message === "get_tabs") {
+        chrome.tabs.query({}, function (tabs) {
+            sendResponse({ message:tabs})
+        })
+    }
+})
 
-    console.log(sender)
 
-    //از این تابع استفاده میکنیم تا پاسخ به فایل پاپ‌آپ ارسال کنیم
-    sendResponse({ message: "Hello to you" })
+chrome.runtime.onConnect.addListener((port) => {
+    console.assert(port.name === 'popup')
+
+    port.onMessage.addListener(msg => {
+        console.log("Recieve Message from popup:", msg.response)
+    })
+
+    chrome.tabs.query({}, function (tabs) {
+        port.postMessage({response: tabs})
+    })
+
+    
 })
