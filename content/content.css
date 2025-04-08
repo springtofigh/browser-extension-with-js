@@ -1,4 +1,11 @@
-.kksr-legend {
+body {
+    font-family: Vazir;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.message_block {
     font-size: 30px !important;
     color: crimson;
 }
