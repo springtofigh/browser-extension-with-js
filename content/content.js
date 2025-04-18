@@ -1,11 +1,14 @@
-const star = document.getElementsByClassName("kksr-legend");
+const articleText = document.querySelector(".wp-content");
 
-// بررسی اینکه آیا هیچ عنصر قانونی وجود دارد - این شرط باید حتما میبود تا اجرا بشه
-//این شرط از ارور خود افزونه هم جلوگیری میکنه
-if (star.length > 0) {
-    star[0].innerHTML = "4.9/5 - ( کل امتیاز دوره : 36 )"
+if (articleText) {
+    const articleContent = articleText.textContent;
+    const wordRegex = /[^\s]+/g
+    const textRegex = articleContent.matchAll(wordRegex);
+    const countTime = [...textRegex].length;
+    const readingTime = Math.round(countTime / 200);
+    const pElement = document.createElement("p");
+    pElement.textContent = `مدت زمان مطالعه: ${readingTime} دقیقه`;
+    pElement.classList.add('raeding-time');
+
+    articleText.insertBefore(pElement, articleText.firstChild)
 }
-
-
-
-console.log(star);

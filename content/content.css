@@ -1,4 +1,6 @@
-.kksr-legend {
-    font-size: 30px !important;
-    color: crimson;
+.raeding-time {
+    background-color: chartreuse;
+    color: rgb(52, 51, 51);
+    border-radius: 12px;
+    padding: 12px;
 }
