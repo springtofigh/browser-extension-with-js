@@ -4,7 +4,7 @@
     "description": "HEX Color picker",
     "version": "1.0.0",
     "icons" : {
-        "16":"icons/ui-design-16x16-9204842",
+        "16":"icons/ui-design-16x16-9204842.png",
         "32":"icons/ui-design-32x32-9204842.png",
         "48":"icons/ui-design-48x48-9204842.png",
         "128":"icons/ui-design-128x128-9204842.png"

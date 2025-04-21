@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My First Extention</title>
-</head>
-<body>
-    <h1>My Chrome Extention</h1>
-    <button id="">
-        دریافت رنگ
-    </button>
+    <link rel="preconnect" href="//fdn.fontcdn.ir" />
+    <link rel="preconnect" href="//v1.fontapi.ir" />
+    <link href="https://v1.fontapi.ir/css/Sahel" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/css/popup.css" />
+  </head>
+  <body>
+    <div class="color-picker-container">
+      <button id="get-color">دریافت رنگ</button>
+
+      <div id="copiedMsg"></div>
+      <ul id="show-color"></ul>
+    </div>
 
     <script src="./popup.js"></script>
-</body>
+  </body>
 </html>
