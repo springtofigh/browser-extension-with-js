@@ -26,19 +26,27 @@
 
 
 // فقط در حال بارگیری
-chrome.downloads.onCreated.addListener((item) => {
-    console.log("start downloaded!", item)
-})
+// chrome.downloads.onCreated.addListener((item) => {
+//     console.log("start downloaded!", item)
+// })
 
 
 //میتونیم دقیق بفهمیم کی دانلود تموم شده - هر بار یک تغییری اتفاق می افته؛ پاز، ادامه و شروع دانلود
-chrome.downloads.onChanged.addListener((item) => {
-    if (item.state && item.state.current === "complete") {
-        console.log("Complete downloade", item)
-    }
+// chrome.downloads.onChanged.addListener((item) => {
+//     if (item.state && item.state.current === "complete") {
+//         console.log("Complete downloade", item)
+//     }
+// })
+
+
+function bytesToGB(bytes) {
+    return bytes / (1024 ** 3)
+}
+
+chrome.system.memory.getInfo((info) => {
+    console.log(bytesToGB(info.availableCapacity));
+    console.log(bytesToGB(info.capacity));
 })
-
-
 
 
 
