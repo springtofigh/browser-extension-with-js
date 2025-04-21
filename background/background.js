@@ -1,19 +1,46 @@
-import { hi, goodby } from "./tools.js";
+// import { hi, goodby } from "./tools.js";
 
-hi();
+// hi();
 
-chrome.runtime.onInstalled.addListener(({reason}) => {
-    console.log(reason)
-    if (reason === "install") {
-        chrome.tabs.create({
-            url:"popup/popup.html"
-        })    
-    } else if (reason === "update") {
-        chrome.tabs.create({
-            url:"popup/dashboard.html"
-        })
+// chrome.runtime.onInstalled.addListener(({reason}) => {
+//     console.log(reason)
+//     if (reason === "install") {
+//         chrome.tabs.create({
+//             url:"popup/popup.html"
+//         })    
+//     } else if (reason === "update") {
+//         chrome.tabs.create({
+//             url:"popup/dashboard.html"
+//         })
+//     }
+// })
+
+
+// اگر نام فایلی رو بدونیم مستقیم در آبجت زیر مینویسیمش
+// chrome.downloads.search({}, result => {  
+//     console.log(result);
+//     result.forEach(file => {
+//         console.log(file.filename)
+//     });
+// })
+
+
+// فقط در حال بارگیری
+chrome.downloads.onCreated.addListener((item) => {
+    console.log("start downloaded!", item)
+})
+
+
+//میتونیم دقیق بفهمیم کی دانلود تموم شده - هر بار یک تغییری اتفاق می افته؛ پاز، ادامه و شروع دانلود
+chrome.downloads.onChanged.addListener((item) => {
+    if (item.state && item.state.current === "complete") {
+        console.log("Complete downloade", item)
     }
 })
+
+
+
+
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     //درخواست ارسال شده از فایل پاپ‌آپ
@@ -40,9 +67,9 @@ chrome.storage.local.get(["name", "age"], (result) => {
 //     console.log("The name is remove", result)
 // })
 
-chrome.storage.local.get({ name:"barana" }, (result) => {
-    console.log(result.name)
-})
+// chrome.storage.local.get({ name:"barana" }, (result) => {
+//     console.log(result.name)
+// })
 
 // chrome.storage.local.remove(["name"], (result) => {
 //     console.log("The name is remove", result)
