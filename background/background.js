@@ -1,4 +1,6 @@
-console.log("kaftar")
+import { hi, goodby } from "./tools.js";
+
+hi();
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     //درخواست ارسال شده از فایل پاپ‌آپ
