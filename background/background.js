@@ -2,6 +2,19 @@ import { hi, goodby } from "./tools.js";
 
 hi();
 
+chrome.runtime.onInstalled.addListener(({reason}) => {
+    console.log(reason)
+    if (reason === "install") {
+        chrome.tabs.create({
+            url:"popup/popup.html"
+        })    
+    } else if (reason === "update") {
+        chrome.tabs.create({
+            url:"popup/dashboard.html"
+        })
+    }
+})
+
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     //درخواست ارسال شده از فایل پاپ‌آپ
     // console.log(request.message)
