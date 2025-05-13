@@ -77,11 +77,18 @@ body {
 }
 
 button {
-    background-color: rgb(18, 38, 222);
+    background-color: rgb(0, 195, 255);
     font-family: Vazir;
     padding: 12px;
     border: none;
     color: #fff;
     border-radius: 12px;
+    width: 100%;
+    height: 40px;
     cursor: pointer;
+}
+
+img {
+    width: 100%;
+    object-fit: cover;
 }
