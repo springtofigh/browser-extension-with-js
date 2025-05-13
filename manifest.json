@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
-  "name": "Image downloader",
-  "description": "downlaod the images of sites you visit",
+  "name": "font detector",
+  "description": "get fonts",
   "version": "1.0.0",
   "icons": {
     "16": "icons/sale-16x16-8585356.png",
