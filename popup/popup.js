@@ -1,21 +1,29 @@
-const getImg = document.getElementById("get_img");
+let get_font = document.getElementById("get_font");
+let remove_font = document.getElementById("remove_font");
 
-window.addEventListener("load", () => {
-    getImg.addEventListener("click", (e) => {
-        async function sendMessagePopup() {
-            const tabs = await chrome.tabs.query({ active: true, currentWindow: true }); //get Active Tab
+let hasActive = false;
+
+get_font.addEventListener("click", () => {
+    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+        if (hasActive === false) {
+            hasActive = true;
             let currentTab = tabs[0];
-            const port = chrome.tabs.connect(currentTab.id, { name: "getImage" });
-            port.postMessage({ message: "hello from popup" });
-            if (chrome.runtime.lastError) {
-                console.error(chrome.runtime.lastError);
-            }
-    
-            port.onMessage.addListener(msg => {
-                console.log(msg.response)
+            chrome.scripting.executeScript({
+                target: { tabId: currentTab.id },
+                files: ["scripts/script.js"]
+            }).then((result) => {
+                console.log("injection", result)
+            }).catch((err) => {
+                console.log(err)
             })
         }
-    
-        sendMessagePopup()
+    })
+})
+
+remove_font.addEventListener("click", () => {
+        chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+            hasActive = true;
+            let currentTabReload = tabs[0];
+            chrome.tabs.reload(currentTabReload.id)
     })
 })
