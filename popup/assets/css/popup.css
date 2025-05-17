@@ -1,87 +1,86 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: Vazir;
-    width: 300px;
-    overflow-y: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1.5rem;
+  font-family: Vazir;
+  width: 300px;
+  overflow-y: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1.5rem;
 }
 
 @font-face {
-    font-family: Vazir;
-    font-style: normal;
-    font-weight: 100;
-    src: url("../fonts/Vazir/Vazir-Thin-WOL.eot") format("opentype"),
-    url('../fonts/Vazir/Vazir-Thin-WOL.woff') format(woff),
-    url('../fonts/Vazir/Vazir-Thin-WOL.woff2') format(woff2),
-    ;
+  font-family: Vazir;
+  font-style: normal;
+  font-weight: 100;
+  src: url("../fonts/Vazir/Vazir-Thin-WOL.eot") format("opentype"),
+    url("../fonts/Vazir/Vazir-Thin-WOL.woff") format(woff),
+    url("../fonts/Vazir/Vazir-Thin-WOL.woff2") format(woff2);
 }
 
 @font-face {
-    font-family: Vazir;
-    font-style: normal;
-    font-weight: 200;
-    src: url("../fonts/Vazir/Vazir-Light-WOL.eot") format("opentype"),
-    url('../fonts/Vazir/Vazir-Light-WOL.woff') format(woff),
-    url('../fonts/Vazir/Vazir-Light-WOL.woff2') format(woff2),
-    ;
-}
-
-
-@font-face {
-    font-family: Vazir;
-    font-style: normal;
-    font-weight: 300;
-    src: url("../fonts/Vazir/Vazir-Regular-WOL.eot") format("opentype"),
-    url('../fonts/Vazir/Vazir-Regular-WOL.woff') format(woff),
-    url('../fonts/Vazir/Vazir-Regular-WOL.woff2') format(woff2),
-    ;
-}
-
-
-@font-face {
-    font-family: Vazir;
-    font-style: normal;
-    font-weight: 400;
-    src: url("../fonts/Vazir/Vazir-Medium-WOL.eot") format("opentype"),
-    url('../fonts/Vazir/Vazir-Medium-WOL.woff') format(woff),
-    url('../fonts/Vazir/Vazir-Medium-WOL.woff2') format(woff2),
-    ;
+  font-family: Vazir;
+  font-style: normal;
+  font-weight: 200;
+  src: url("../fonts/Vazir/Vazir-Light-WOL.eot") format("opentype"),
+    url("../fonts/Vazir/Vazir-Light-WOL.woff") format(woff),
+    url("../fonts/Vazir/Vazir-Light-WOL.woff2") format(woff2);
 }
 
 @font-face {
-    font-family: Vazir;
-    font-style: normal;
-    font-weight: 600;
-    src: url("../fonts/Vazir/Vazir-Bold-WOL.eot") format("opentype"),
-    url('../fonts/Vazir/Vazir-Bold-WOL.woff') format(woff),
-    url('../fonts/Vazir/Vazir-Bold-WOL.woff2') format(woff2),
-    ;
+  font-family: Vazir;
+  font-style: normal;
+  font-weight: 300;
+  src: url("../fonts/Vazir/Vazir-Regular-WOL.eot") format("opentype"),
+    url("../fonts/Vazir/Vazir-Regular-WOL.woff") format(woff),
+    url("../fonts/Vazir/Vazir-Regular-WOL.woff2") format(woff2);
 }
 
 @font-face {
-    font-family: Vazir;
-    font-style: normal;
-    font-weight: 700;
-    src: url("../fonts/Vazir/Vazir-Black-WOL.eot") format("opentype"),
-    url('../fonts/Vazir/Vazir-Black-WOL.woff') format(woff),
-    url('../fonts/Vazir/Vazir-Black-WOL.woff2') format(woff2),
-    ;
+  font-family: Vazir;
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/Vazir/Vazir-Medium-WOL.eot") format("opentype"),
+    url("../fonts/Vazir/Vazir-Medium-WOL.woff") format(woff),
+    url("../fonts/Vazir/Vazir-Medium-WOL.woff2") format(woff2);
+}
+
+@font-face {
+  font-family: Vazir;
+  font-style: normal;
+  font-weight: 600;
+  src: url("../fonts/Vazir/Vazir-Bold-WOL.eot") format("opentype"),
+    url("../fonts/Vazir/Vazir-Bold-WOL.woff") format(woff),
+    url("../fonts/Vazir/Vazir-Bold-WOL.woff2") format(woff2);
+}
+
+@font-face {
+  font-family: Vazir;
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/Vazir/Vazir-Black-WOL.eot") format("opentype"),
+    url("../fonts/Vazir/Vazir-Black-WOL.woff") format(woff),
+    url("../fonts/Vazir/Vazir-Black-WOL.woff2") format(woff2);
 }
 
 button {
-    background-color: rgb(18, 38, 222);
-    font-family: Vazir;
-    padding: 12px;
-    border: none;
-    color: #fff;
-    border-radius: 12px;
-    cursor: pointer;
+  background-color: rgb(18, 38, 222);
+  font-family: Vazir;
+  padding: 12px;
+  border: none;
+  width: 100%;
+  margin-bottom: 10px;
+  color: #fff;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+#remove_btn {
+  background-color: rgb(255 0 144);
 }
