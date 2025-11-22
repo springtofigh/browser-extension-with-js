@@ -86,8 +86,8 @@ chrome://extensions/
 
 **Bahar**  
 💼 Front-End Developer | Passionate about JS & Chrome Extensions  
-📧 [dev@springcode.site](mailto:bahar.dev@gmail.com)  
-🔗 [GitHub](https://github.com/YourUsername) | [LinkedIn](https://linkedin.com/in/YourProfile)
+📧 [bahartofigh@gmail.com](mailto:bahartofigh@gmail.com)  
+🔗 [GitHub](https://github.com/springtofigh/) | [LinkedIn](https://www.linkedin.com/in/bahar-tofigh/)
 
 
 
