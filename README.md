@@ -9,7 +9,7 @@ The active tab is visually highlighted for convenience, making it easy to unders
 ## 👣 User Flow
 
 1. Click the extension icon to open the popup.
-2. Inside the popup, press the **“Get Your Tabs”** button.
+2. Inside the popup, press the **“دریافت تب‌های شما”** button.
 3. The extension fetches all currently open tabs across the browser.
 4. A list of tabs appears below the button:
    - The **active tab** is shown inside a **blue background box**.
