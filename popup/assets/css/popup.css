@@ -7,8 +7,10 @@
 body {
     font-family: Vazir;
     width: 300px;
+    max-height: 300px;
     overflow-y: auto;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     padding: 1.5rem;
@@ -81,6 +83,7 @@ button {
     font-family: Vazir;
     padding: 12px;
     border: none;
+    margin-bottom: 15px;
     color: #fff;
     border-radius: 12px;
     width: 100%;
