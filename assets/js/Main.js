@@ -43,7 +43,7 @@ function getHour() {
 }
 getHour();
 // هر یک دقیقه اجرا میشه تا هر زمان که لازم بود نوشته پیغام رو تغییر بده
-setInterval(getHour(), 60 * 1000);
+setInterval(getHour, 60 * 1000);
 
 function getData() {
     const year = new Date().toLocaleString("fa-IR", { year: "numeric" });
