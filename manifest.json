@@ -1,7 +1,7 @@
 {
     "manifest_version": 3, 
-    "name": "heliomnet",
-    "description": "Build an Extension!",
+    "name": "Tab Retriever",
+    "description": "allows users to retrieve and view a complete list of all their open tabs.",
     "version": "1.0.0",
     "icons" : {
         "16":"icons/sale-16x16-8585356.png",
@@ -15,12 +15,5 @@
     "permissions":["tabs"],
     "background": {
         "service_worker": "/background/background.js"
-    },
-    "content_scripts": [
-        {
-            "js": ["content/content.js"],
-            "css": ["content/content.css"],
-            "matches":["<all_urls>"]
-        }
-    ]
+    }
 }
